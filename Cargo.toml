@@ -1,0 +1,25 @@
+[package]
+name = "passwd-gen"
+version = "1.0.0"
+authors = ["aimerlief"]
+description = "Generate passwords automatically"
+repository = "https://github.com/aimerlief/passwd-gen"
+readme = "README.md"
+license = "Apache-2.0/MIT"
+categories = ["command-line-utilities"]
+edition = "2021"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+serde1 = ["serde"]
+
+[dependencies]
+rand = "0.8.3"
+serde = { version = "1.0.216", features = ["derive"], optional = true }
+clap = { version = "4.5.23", features = ["derive"] }
+
+[[bin]]
+name = "passwd-gen"
+path = "src/main.rs"
